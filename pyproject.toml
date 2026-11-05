@@ -1,0 +1,25 @@
+[project]
+name = "inspect-robots-delta"
+version = "0.1.0"
+description = "Inspect Robots plugin: simulated 3-RRR delta robot, suction pick-and-place"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["inspect-robots>=1.0", "numpy"]
+
+[project.entry-points."inspect_robots.embodiments"]
+delta_sim = "inspect_robots_delta:DeltaSimEmbodiment"
+delta_sim_joint = "inspect_robots_delta:DeltaSimJointEmbodiment"
+
+[project.entry-points."inspect_robots.policies"]
+delta_scripted = "inspect_robots_delta:DeltaScriptedPolicy"
+delta_joint_scripted = "inspect_robots_delta:DeltaJointScriptedPolicy"
+
+[project.entry-points."inspect_robots.tasks"]
+delta-pick-place = "inspect_robots_delta:delta_pick_place"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/inspect_robots_delta"]

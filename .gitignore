@@ -1,0 +1,10 @@
+.venv/
+.cfg/
+logs/
+logs_agent/
+tools/
+__pycache__/
+*.egg-info/
+*.mp4
+*.npy
+.pytest_cache/
