@@ -1,5 +1,10 @@
 # inspect-robots-delta
 
+[![CI](https://github.com/sergiudanstan/inspect-robots-delta/actions/workflows/ci.yml/badge.svg)](https://github.com/sergiudanstan/inspect-robots-delta/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/sergiudanstan/inspect-robots-delta/actions/workflows/codeql.yml/badge.svg)](https://github.com/sergiudanstan/inspect-robots-delta/actions/workflows/codeql.yml)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/sergiudanstan/inspect-robots-delta/badge)](https://scorecard.dev/viewer/?uri=github.com/sergiudanstan/inspect-robots-delta)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 Simulated 3-RRR rotary delta robot (Clavel type) with a suction cup, packaged as an
 [inspect-robots](https://github.com/robocurve/inspect-robots) plugin. Tested against
 inspect-robots 1.0.0 (PyPI) and main @ 7720195.
@@ -54,6 +59,10 @@ displacement over the interpolated steps (suction +1 over 2 steps arrives as
 0.5 + 0.5). Suction is therefore latched by sign: positive on, negative off, 0 holds.
 `test_cartesian_suction_latches_when_left_at_zero` and
 `test_cartesian_suction_switches_on_a_split_command` cover both.
+
+## Development
+
+`uv venv --python 3.12 && uv pip install -e . pytest && .venv/bin/python -m pytest -q` runs the 24 tests. See [CONTRIBUTING.md](CONTRIBUTING.md) for branches and releases, [SECURITY.md](SECURITY.md) for reporting vulnerabilities, and [CHANGELOG.md](CHANGELOG.md) for history.
 
 ## License
 
